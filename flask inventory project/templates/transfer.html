@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <title>home</title>
+    </head>
+    <body>
+<h3>
+            <a href="{{url_for('transfer')}}">product transfer</a>
+    </h3>
+<hr/>
+<table border="2"padding="5">
+<thead>
+    <tr>
+        <th>m_id</th>
+        <th>time</th>
+        <th>frm</th>
+        <th>to</th>
+        <th>p_name</th>
+        <th>q_qty</th>
+    </tr>
+</thead>
+<tbody>
+    {% for movement in movements%}
+    <tr>
+        <td>{{movement.m_id}}</td>
+        <td>{{movement.time}}</td>
+        <td>{{movement.frm}}</td>
+        <td>{{movement.to}}</td>
+        <td>{{movement.p_name}}</td>
+        <td>{{movement.p_qty}}</td>
+
+    </tr>
+    {%endfor%}
+</tbody>
+</table>
+<br><br>
+             <a href="{{url_for('addproduct')}}">add new product</a>
+             <br>
+             <a href="{{url_for('loc')}}">add new location</a>
+             <br>
+             <a href="{{url_for('move')}}">movement</a>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <title>home</title>
+    </head>
+    <body>
+<h3>
+            <a href="{{url_for('list')}}">inventory management system</a>
+    </h3>
+<hr/>
+<h3>products list</h3>
+<table border="2"padding="5">
+<thead>
+    <tr>
+        <th>id</th>
+        <th>product</th>
+        <th>qty</th>
+    </tr>
+</thead>
+<tbody>
+    {% for product in products%}
+    <tr>
+        <td>{{product.id}}</td>
+        <td>{{product.product}}</td>
+        <td>{{product.qty}}</td>
+        
+        <td>
+            <a href = "/edit/{{product.id}}" >Edit</a>
+             <a href = "/delete/{{product.id}}" >Delete</a>
+        </td>
+    </tr>
+    </tr>
+    {%endfor%}
+</tbody>
+</table>
+<br><br>
+             <a href="{{url_for('addproduct')}}">add new product</a>
+             <br>
+             <a href="{{url_for('loc')}}">add new location</a>
+    </body>
+</html>
